@@ -1,0 +1,15 @@
+#
+# CONTROLE-VERSION 20240401
+#
+# Autor: José Henrique da Silva - GECIB
+# Data de criação: 01/04/2024
+# Versão: 0.01
+#
+# [minutos] [horas] [dias do mês] [mês] [dias da semana] [usuário] [comando]
+#
+#*/10 * * * * root /usr/bin/neofetch --config /etc/neofetch/config.conf | tee /etc/motd
+10 3     * * *   root    [ -x /usr/share/lab-servers/scripts/control-backup.sh ] && /usr/share/lab-servers/scripts/control-backup.sh
+10 3     * * *   root    [ -x /usr/share/lab-servers/scripts/lista-pkg.sh ] && /usr/share/lab-servers/scripts/lista-pkg.sh
+10 3     * * *   root    [ -x /usr/share/lab-servers/scripts/ntpdate-debian.sh ] && /usr/share/lab-servers/scripts/ntpdate-debian.sh
+
+#Fim do agendamento, obrigatório ter uma linha em branco no final do arquivo para a execução correta.
